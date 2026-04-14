@@ -1,0 +1,131 @@
+.light-ring-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+
+.ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  transition: all 0.5s ease;
+}
+
+.ring-outer {
+  border-width: 3px;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.ring-inner {
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  border-width: 2px;
+  opacity: 0.8;
+}
+
+.core-glow {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: currentColor;
+  border-radius: 50%;
+  filter: blur(25px);
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+.state-label {
+  position: absolute;
+  bottom: -40px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  opacity: 0.8;
+  font-weight: 500;
+  animation: va-breathe 3s infinite;
+}
+
+/* STATE: ESPERANDO (Waiting/Idle) - Cyan */
+.state-esperando {
+  color: var(--ring-idle);
+}
+.state-esperando .ring-outer {
+  border-top-color: currentColor;
+  border-bottom-color: currentColor;
+  animation: va-spin 10s linear infinite;
+  opacity: 0.6;
+}
+.state-esperando .ring-inner {
+  border-left-color: currentColor;
+  border-right-color: currentColor;
+  animation: va-spin 7s linear infinite reverse;
+  opacity: 0.4;
+}
+.state-esperando .core-glow {
+  animation: va-breathe 4s infinite ease-in-out;
+}
+
+/* STATE: ESCUCHANDO (Listening) - Pink pulse */
+.state-escuchando {
+  color: var(--ring-listening);
+}
+.state-escuchando .ring-outer {
+  border-color: currentColor;
+  opacity: 0.8;
+  animation: va-pulse 1.5s infinite ease-in-out;
+}
+.state-escuchando .ring-inner {
+  border-color: currentColor;
+  opacity: 1;
+  animation: va-pulse 1.5s infinite ease-in-out 0.2s;
+}
+.state-escuchando .core-glow {
+  filter: blur(15px);
+  animation: va-pulse 1.5s infinite ease-in-out 0.1s;
+}
+
+/* STATE: PENSANDO (Thinking) - Purple fast spin */
+.state-pensando {
+  color: var(--ring-thinking);
+}
+.state-pensando .ring-outer {
+  border-top-color: currentColor;
+  border-left-color: currentColor;
+  animation: va-spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+.state-pensando .ring-inner {
+  border-bottom-color: currentColor;
+  border-right-color: currentColor;
+  animation: va-spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite reverse;
+}
+.state-pensando .core-glow {
+  animation: va-pulse 2s infinite;
+}
+
+/* STATE: RESPONDIENDO (Responding) - Orange Wave */
+.state-respondiendo {
+  color: var(--ring-responding);
+}
+.state-respondiendo .ring-outer {
+  border: 4px dashed currentColor;
+  animation: va-spin 8s linear infinite;
+}
+.state-respondiendo .ring-inner {
+  border-color: currentColor;
+  animation: va-pulse 0.8s infinite alternate;
+}
+.state-respondiendo .core-glow {
+  filter: blur(20px);
+  opacity: 0.8;
+  animation: va-breathe 1s infinite alternate;
+}

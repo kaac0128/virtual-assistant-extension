@@ -1,0 +1,130 @@
+.settings-wrapper {
+  width: 90%;
+  max-width: 450px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transform: translateY(0);
+  animation: va-slideUpFade 0.6s ease-out;
+}
+
+@keyframes va-slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.settings-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-pulse {
+  padding: 16px;
+  border-radius: 50%;
+  background: rgba(129, 34, 255, 0.1);
+  box-shadow: 0 0 20px rgba(129, 34, 255, 0.2);
+  animation: va-pulse 2s infinite;
+  display: inline-flex;
+}
+
+.text-accent {
+  color: var(--accent-purple);
+}
+
+.settings-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.settings-header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.provider-name {
+  font-weight: 700;
+}
+.provider-name.groq { color: #f55036; }
+.provider-name.gemini { color: #1a73e8; }
+.provider-name.openrouter { color: #9c27b0; }
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.success-icon {
+  position: absolute;
+  right: 12px;
+  color: #00e676;
+  animation: va-popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes va-popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.input-wrapper .glass-input {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.error-message {
+  background: rgba(254, 9, 121, 0.1);
+  border: 1px solid rgba(254, 9, 121, 0.3);
+  color: #ff4081;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  animation: va-slideUpFade 0.3s ease-out;
+}
+
+.settings-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.settings-save-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.05rem;
+  justify-content: center;
+}
