@@ -32,7 +32,7 @@ def execute_agent(client_id, request_data, db):
     tools = get_all_tools()
     
     prompt = ChatPromptTemplate.from_messages([
-        ("system", """Eres Antigravity, un asistente de Inteligencia Artificial avanzado con un diseño futurista y eficiente.
+        ("system", """Eres VOIDRA, un asistente de Inteligencia Artificial avanzado con un diseño futurista y eficiente.
 Tu objetivo es ayudar al usuario analizando el contexto de la página actual (especialmente si es YouTube) y ejecutando tareas complejas.
 
 Si el usuario solicita acciones como 'Explicar', 'Apuntes' o 'Ampliar' sobre un video de YouTube, utiliza el título y la descripción proporcionados para generar contenido de alta calidad.
