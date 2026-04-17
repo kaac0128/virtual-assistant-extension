@@ -4,7 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
-from tools import get_all_tools, control_music, get_weather, translate_text, search_internet
+from tools import get_all_tools, search_internet
 
 def get_llm(user_config):
     # Inicializa el motor que tenga disponible
